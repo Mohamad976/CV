@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <div class="color-changer">
+    <div class="color-panel">
+        <img src="{% static 'images/gear.png' %}" alt="">
+    </div>
+    <div class="color-selector">
+        <div class="heading">Custom Colors</div>
+        <div class="colors">
+            <ul >
+            <li>
+                <a href="#0" class="color-red " title="color-red"></a>
+            </li>
+            <li>
+                <a href="#0" class="color-purple" title="color-purple"></a>
+            </li>
+            <li>
+                <a href="#0" class="color-malt" title="color-malt"></a>
+            </li>
+            <li>
+                <a href="#0" class="color-green" title="color-green"></a>
+            </li>
+            <li>
+                <a href="#0" class="color-blue" title="color-blue"></a>
+            </li>
+            <li>
+                <a href="#0" class="color-orange" title="color-orange"></a>
+            </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <!--about content-->
+    <div id="about-content">
+        <div class="about-header">
+            About <span class="color">Me</span>
+            <span class ="header-caption">Get to Know <span class="color"> me.</span></span>
+        </div>
+        <div class="about-main">
+    <div class="about-first-paragraph wow">
+    <!--about description-->
+    {% for about in abouts %}
+    <span class="about-first-line">
+            I'm creative 
+            <span class="color">{{ about.your_job }}</span>
+            <br />
+            based in {{ about.based_in }} </span>
+            <br>
+    <span class="about-second-line"> {{ about.summery_about }} </span>
+    <div class="cv">
+        <a href="https://drive.google.com/file/d/1TAXo9xLO2ZzaaHmVI4_Qh06x_jKAseDq/view?usp=sharing"><button>Download <span class="colors">CV</span></button></a>
+    </div>
+    </div>
+    <!--about picture-->
+    <div class="about-img">
+        <img src="{{about.photo.url}}" alt="Your Image">
+    </div>
+    {% endfor %}
+    </div>
+
+    </div>
+    <!--services start-->
+    <div id="services">
+        <div class="color-changer">
+            <div class="color-panel">
+                <img src="{% static 'images/gear.png' %}" alt="">
+            </div>
+            <div class="color-selector">
+                <div class="heading">Custom Colors</div>
+                <div class="colors">
+                    <ul >
+                    <li>
+                        <a href="#0" class="color-red " title="color-red"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-purple" title="color-purple"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-malt" title="color-malt"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-green" title="color-green"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-blue" title="color-blue"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-orange" title="color-orange"></a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+    <!--services header-->
+            <div class="services-heading wow">
+                <span class="color">My</span> Services
+            </div>
+    <!--services header end-->
+    <!--services content-->
+            <div class="services-content">
+                {% for service in services %}
+                <div class="service-one service wow">
+                    <div class="service-img">
+                    <img src="{{service.photo.url}}" width="120px" height="60px" alt="service-one">
+                    </div>
+                    <div class="service-description">
+                        <h2>{{ service.your_service }}</h2>
+                        <p>{{ service.about_your_service }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+    </div>
+    <!--services content end-->
+    <!--services end-->
+    
+    <div id="skills">
+        <div class="skills-header">
+            My <span class="color"> Skills</span>
+        </div>
+        <div class="skills-content " style="text-align: center;">
+        {% for skill in skills %}
+            <div class="skill-html skill">
+                <div class="skill-text">
+            <div class="html">
+                {{ skill.your_skill }}
+            </div>
+                </div>
+            <div class="html-prog wow prog">
+        <div class="js-progress" style="width: {{ skill.percent }}%;";>{{ skill.percent }}%</div>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    
+<!--copyright-section You Can Remove After Downloading-->
+    <div class="footer">
+    <!-- <div class="footer-text">
+        <img src="{% static './images/copyright.png' %}" alt="copyright-img" class="images" height="14px"> Willy Wonkas
+    </div> -->
+    </div>
+<!--copyright-section-->
+<!--about end-->
+{% endblock content %}
