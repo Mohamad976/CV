@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <body>
+            <!--Header-->
+            <div id="header">
+                <div id="particles"></div>
+                <!--Social Media Links-->
+                <div class="social-media-links">
+                        <a href="https://www.instagram.com/amin_farzannia?igsh=OGQ5ZDc2ODk2ZA=="><img src="{% static 'images/instagram logo.png' %}" class="social-media" alt="instagram-logo"></a>
+                        <!-- <a href="#"><img src="{% static 'images/facebook logo.png' %}" class="social-media" alt="facebook-logo"></a> -->
+                        <a href="https://ir.linkedin.com/in/mohammad-amin-farzannia-198009211"><img src="{% static 'images/linkedin logo.png' %}" class="social-media" alt="linkedin-logo"></a>
+                        <!-- <a href="#"><img src="{% static 'images/twitter logo.png' %}" class="social-media" alt="twitter-logo"></a> -->
+                        <a href="Tel:09370753191"><img src="{% static 'images/call.png' %}" alt="phone-pic" class="social-media" style="width: 24px;"></a>
+                        <a href="Mailto:farzannia.mohammadamin@gmail.com"><img src="{% static 'images/mail-1.png' %}" alt="email-pic" class="social-media" style="width: 35px;"></a>
+                        
+                </div>
+                <!--Social Media Links end-->
+                {% for home in homes %}
+                <div class="header-content">
+                    <div class="header-content-box">
+                    <div class="firstline"><span class="color"> {{home.mid_name}} </span> {{home.last_name}} </div>
+                    <div class="secondline">
+                    I'm a
+                <!-- <span class="txt-rotate color" data-period="1200"data-rotate='[ " Designer.", " Blogger.", " Freelancer." ]'></span> -->
+                <span class="txt-rotate color" data-period="1200"data-rotate='[ "{{home.yourwork}}." ]'></span>
+                <span class="slash">|</span>
+                
+            </div>
+                        <div class="contact">
+                        <!--if you want to add icon in right hand-->
+                        </div>  
+                
+                </div>
+                </div>
+                <!--header image-->
+                <div class="header-image">
+                <!-- <img src="{% static 'images/man.jpg' %}" alt="logo"> -->
+                <img src= "{{home.photo.url}}" alt="logo">
+                {% endfor %}
+
+                </div>
+                <!--header image end-->
+            </div>
+            <!--Header End-->
+            <!--HomePage End-->
+            <!--Main-Section End-->
+            
+        </div>
+
+
+
+    </body>
+    </html>
+{% endblock content %}
