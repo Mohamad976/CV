@@ -1,0 +1,67 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Willy Wonkas - Personal Portfolio Website Template" />
+	<meta name="keywords" content="blog, business card, creative, creative portfolio, cv theme, online resume, personal, portfolio, professional cv, responsive portfolio, resume, resume theme, vcard" />
+	<meta name="author" content="willy wonka" /> -->
+    <title>M.A. Farzannia - Personal Portfolio Website</title>
+  <!--favicon-img--> 
+   <link rel="icon" type="image/png" href="{% static 'images/favicon.png'%}">
+   <!--favicon-img-->
+   <!--main css file should not be removed -->
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+    <!--main css file-->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script> -->
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+</head>
+
+<!-- mouse  follower -->
+    <div class="cursor"></div>
+<!--mouse  follower-->
+<div id="loader">
+    {% for home in homes %}
+        <span class="color"> {{home.mid_name}} </span>{{home.last_name}} 
+    {% endfor %}
+</div>
+<!--loader-end-->
+<!--link-screen-->
+<div id="breaker">
+</div>
+<div id="breaker-two">
+</div>
+<!--link-screen-->
+<!--Main-Section-->
+<!--Navigator-fullscreen-->
+<div id="navigation-content">
+    <div class="navigation-close">
+        <span class="close-first"></span>
+        <span class="close-second"></span>
+    </div>
+    <div class="navigation-links">
+        <a href="{% url 'home:home_list'%}" >HOME</a>
+        <a href="{% url 'about:about_list'%}" >ABOUT</a>
+        <!-- <a href="{% url 'home:home_list'%}" data-text="BLOG" id="blog-link" >BLOG</a> -->
+        <a href="{% url 'portfolio:portfolio_list'%}" >PORTFOLIO</a>
+    </div>
+</div>
+
+<div id="navigation-bar">
+    <div class="menubar">
+        <span class="first-span"></span>
+        <span class="second-span"></span>
+        <span class="third-span"></span>
+    </div>
+</div>
+
+
+{% block content %}
+
+{% endblock content %}
+
+<!--all the divisions-->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
