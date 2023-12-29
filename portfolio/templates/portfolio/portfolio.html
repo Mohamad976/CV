@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <!--blog-->
+        <div class="color-changer">
+            <div class="color-panel">
+                <img src="{% static 'images/gear.png' %}" alt="">
+            </div>
+            <div class="color-selector">
+                <div class="heading">Custom Colors</div>
+                <div class="colors">
+                    <ul >
+                    <li>
+                        <a href="#0" class="color-red " title="color-red"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-purple" title="color-purple"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-malt" title="color-malt"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-green" title="color-green"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-blue" title="color-blue"></a>
+                    </li>
+                    <li>
+                        <a href="#0" class="color-orange" title="color-orange"></a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+    <!-- <div class="blog-header"> Blogs</span> -->
+    <div class="portfolio-header"> <span class="color"> My </span> Portfolio
+    <span class ="header-caption"> Some Of My <span class="color"> Works</span></span></div>
+        <div class="blog-content">
+            {% for portfolio in portfolios %}
+            <div class="blogs">
+                
+                <a href="{% url 'portfolio:work' portfolio.id %}">
+                <div class="img">
+                    <img src="{{portfolio.photo.url}}" alt="blog-one">
+                    <div class="blog-date">{{portfolio.time}}</div>
+                </div>
+                <div class="blog-text">
+                    <h3>{{portfolio.issue}}</h3>
+                    <p>{{portfolio.description}}</p>
+                </div></a>
+                
+            </div>   
+            {% endfor %}
+        </div>
+        <!--copyright-section You Can Remove After Downloading-->
+        <div class="footer">
+        </div>
+    <!--copyright-section-->
+    </div>
+    <!--blog end-->
+{% endblock content %}
